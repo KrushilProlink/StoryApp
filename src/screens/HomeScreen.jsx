@@ -1,22 +1,35 @@
-import { Image, Text, View,TouchableOpacity } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Image, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 
-const HomeScreen = () => {
-  const navigate = useNavigation()
+const HomeScreen = ({ navigation }) => {
+
   return (
-    <View>
-      <View>
-      <Image source={require('../../assets/homeScreen.png')}/>
-      <Image source={require('../../assets/homeScreen2.png')} style={{position:"absolute",bottom:100,left:45}}/>
-     <View style={{position:"absolute",bottom:215,left:80}}>
-     <TouchableOpacity style={{flexDirection:"row",alignItems:'center',fontSize:45}} className="font-bold" onPress={()=>navigate.navigate("Story")}>
-      START <FontAwesome name="play" size={45} color="black" style={{marginLeft:15}}/>
-     </TouchableOpacity>
-     </View>
+    <View style={{ flex: 1, padding: 0 }}>
+      <ImageBackground source={require('../../assets/homeScreen.png')}
+        style={{
+          flex: 1,
+          resizeMode: 'cover',
+          justifyContent: 'center',
+          alignItems: "center",
+          width: 400
+        }}>
+        <View>
+          <Image source={require('../../assets/homeScreen2.png')}
+            style={{ marginTop: 310 }}
+          />
+          <View
+            style={{ position: "absolute", bottom: 110, left: 50 }}
+          >
+            <TouchableOpacity style={{ flexDirection: "row", alignItems: 'center' }} onPress={() => navigation.navigate('Story')}>
+              <Text style={{ fontSize: 45, fontWeight: 'bold' }}>START</Text>
+              <FontAwesome name="play" size={45} color="black" style={{ marginLeft: 15 }} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
     </View>
-    </View>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

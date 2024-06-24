@@ -1,59 +1,69 @@
-import { Image, Text, View, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native';
+import { FlatList, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native';
 
+const windowWidth = Dimensions.get('window').width;
 
-
-const StoryCategory = () => {
-    const navigate = useNavigation()
+const StoryCategory = ({ navigation }) => {
 
     const stories = [
         { id: '1', title: '૫શુ ની કહાનીઓ', image: require('../../assets/1.png') },
         { id: '2', title: 'પક્ષી ની કહાનીઓ', image: require('../../assets/2.png') },
         { id: '3', title: 'રાજા ની કહાનીઓ', image: require('../../assets/3.png') },
         { id: '4', title: 'મિત્ર ની કહાનીઓ', image: require('../../assets/4.png') },
+        // Add more stories as needed
     ];
-    const StoryItem = ({ item }) => (
-        <TouchableOpacity style={styles.itemContainer} onPress={()=>navigate.navigate('StorySubCategory',{id:item.id})}>
+
+    const StoryItem = ({ item, navigation }) => (
+        <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate("StorySubCategory", { id: item.id, title: item?.title })}>
             <Image source={item.image} style={styles.image} />
             <Text style={styles.title}>{item.title}</Text>
             <Image source={require('../../assets/arrow.png')} style={styles.arrow} />
         </TouchableOpacity>
     );
     return (
-        <View>
-            <View>
-                <Image source={require('../../assets/seconScreen.png')} />
-            </View>
+        <ImageBackground source={require('../../assets/seconScreen.png')} style={styles.bgstyle}>
             <View style={styles.container}>
                 <FlatList
                     data={stories}
-                    renderItem={({ item }) => <StoryItem item={item}/>}
-                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <StoryItem item={item} navigation={navigation} />}
+                    keyExtractor={item => item.id.toString()}
                 />
             </View>
-        </View>
-    )
+        </ImageBackground>
+    );
 }
+
 const styles = StyleSheet.create({
-    container: {
+    bgstyle: {
         flex: 1,
-        position:"absolute",
-        padding:30
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    container: {
+        width: '100%',
+        paddingHorizontal: 10,
+        paddingBottom: 20,
+        alignItems: 'center',
+    },
+    flatlistContent: {
+        width: '100%',
     },
     itemContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 10,
+        paddingHorizontal: 10,
+        justifyContent: 'center',
         backgroundColor: '#F9E79F',
         marginBottom: 10,
         borderRadius: 5,
-        width:300
+        width: windowWidth - 20,
+        maxWidth: 400,
     },
     image: {
         width: 70,
         height: 70,
         borderRadius: 5,
+        marginTop: 12,
     },
     title: {
         flex: 1,
@@ -66,4 +76,5 @@ const styles = StyleSheet.create({
         height: 20,
     },
 });
-export default StoryCategory
+
+export default StoryCategory;
