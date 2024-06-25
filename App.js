@@ -14,6 +14,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" translucent={true} backgroundColor="transparent" />
+
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
