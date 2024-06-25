@@ -23,6 +23,18 @@
     "preview4": {
       "distribution": "internal"
     },
+    "staging": {
+      "android": {
+        "gradleCommand": ":app:assembleStaging"
+      },
+      "distribution": "internal"
+    },
+    "krushil683": {
+      "android": {
+        "gradleCommand": ":app:assembleKrushil683"
+      },
+      "distribution": "internal"
+    },
     "production": {}
   },
   "submit": {
