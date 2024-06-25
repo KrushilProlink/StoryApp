@@ -12,7 +12,7 @@ const StorySubCategory = (props) => {
         { id: '11', categoryId: '1', title: 'હાથી અને કીડી ની વાર્તાઓ', image: require('../../assets/subStoryImage/story1.png') },
         { id: '12', categoryId: '1', title: 'સિંહ ની વાર્તાઓ', image: require('../../assets/subStoryImage/story2.png') },
         { id: '13', categoryId: '1', title: 'બિલાડી અને કૂતરા ની વાર્તાઓ', image: require('../../assets/subStoryImage/story3.png') },
-        { id: '14', categoryId: '1', title: 'ઉંદર અને સિંહ  ની વાર્તાઓ', image: require('../../assets/subStoryImage/story4.png') },
+        { id: '14', categoryId: '1', title: 'ઉંદર અને સિંહ ની વાર્તાઓ', image: require('../../assets/subStoryImage/story4.png') },
         { id: '15', categoryId: '1', title: 'વાંદરો અને બિલાડી  ની વાર્તાઓ', image: require('../../assets/subStoryImage/story5.png') },
         { id: '16', categoryId: '2', title: 'પોપટ ની વાર્તા', image: require('../../assets/subStoryImage/story6.png') },
         { id: '17', categoryId: '2', title: 'સાત ચકલી ની વાર્તા', image: require('../../assets/subStoryImage/story7.png') },
