@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
             style={{ position: "absolute", bottom: 110, left: 50 }}
           >
             <TouchableOpacity style={{ flexDirection: "row", alignItems: 'center' }} onPress={() => navigation.navigate('Story')}>
-              <Text style={{ fontSize: 45, fontWeight: 'bold' }}>START</Text>
+              <Text style={{ fontSize: 45, fontWeight: 'bold' }}>શરૂઆત</Text>
               <FontAwesome name="play" size={45} color="black" style={{ marginLeft: 15 }} />
             </TouchableOpacity>
           </View>

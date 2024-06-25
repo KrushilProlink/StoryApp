@@ -5,11 +5,10 @@ const windowWidth = Dimensions.get('window').width;
 const StoryCategory = ({ navigation }) => {
 
     const stories = [
-        { id: '1', title: '૫શુ ની કહાનીઓ', image: require('../../assets/1.png') },
-        { id: '2', title: 'પક્ષી ની કહાનીઓ', image: require('../../assets/2.png') },
-        { id: '3', title: 'રાજા ની કહાનીઓ', image: require('../../assets/3.png') },
-        { id: '4', title: 'મિત્ર ની કહાનીઓ', image: require('../../assets/4.png') },
-        // Add more stories as needed
+        { id: '1', title: '૫શુ ની વાર્તાઓ', image: require('../../assets/storyImage/story1.png') },
+        { id: '2', title: 'પક્ષી ની વાર્તાઓ', image: require('../../assets/storyImage/story2.png') },
+        { id: '3', title: 'રાજા ની વાર્તાઓ', image: require('../../assets/storyImage/story3.png') },
+        { id: '4', title: 'મિત્ર ની વાર્તાઓ', image: require('../../assets/storyImage/story4.png') },
     ];
 
     const StoryItem = ({ item, navigation }) => (
@@ -60,10 +59,10 @@ const styles = StyleSheet.create({
         maxWidth: 400,
     },
     image: {
-        width: 70,
-        height: 70,
+        width: 65,
+        height: 65,
         borderRadius: 5,
-        marginTop: 12,
+        marginVertical: 10
     },
     title: {
         flex: 1,
